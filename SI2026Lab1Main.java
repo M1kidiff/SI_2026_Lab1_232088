@@ -122,3 +122,16 @@ public class SI2026Lab1Main {
         System.out.println("Library initialized.");
     }
 }
+public void borrowBook(String title) {
+    for (Book book : books) {
+        if (book.getTitle().equalsIgnoreCase(title)) {
+            if (!book.isBorrowed()) {
+                book.setBorrowed(true);
+                System.out.println("Book checked out.");
+            } else {
+              System.out.println("Borrowed successfully.");            }
+            return;
+        }
+    }
+    System.out.println("Book not found.");
+}
